@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -122,6 +124,10 @@ class _CalculatorState extends State<Calculator> {
     if (text == "=") {
       result = calculate();
       return;
+    }
+    if (text == "=") {
+      result = calculate();
+      if (result.endsWith(".0")) result = result.replaceAll('.0', "");
     }
     userInput = userInput + text;
   }
